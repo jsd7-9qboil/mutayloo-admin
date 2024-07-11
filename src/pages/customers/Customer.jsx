@@ -165,7 +165,11 @@ const Customer = () => {
               size="icon"
               className="overflow-hidden rounded-full"
             >
-              <img src="https://via.placeholder.com/1920x1080" className="w-12 h-12 overflow-hidden rounded-full" alt="" />
+              <img
+                src="https://via.placeholder.com/1920x1080"
+                className="w-12 h-12 overflow-hidden rounded-full"
+                alt=""
+              />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -271,7 +275,9 @@ const Customer = () => {
                     <TableHead className="hidden sm:table-cell">
                       Status
                     </TableHead>
-                    <TableHead className="hidden md:table-cell">Register_Date</TableHead>
+                    <TableHead className="hidden md:table-cell">
+                      Register_Date
+                    </TableHead>
                     <TableHead className="text-right">Amount</TableHead>
                   </TableRow>
                 </TableHeader>
