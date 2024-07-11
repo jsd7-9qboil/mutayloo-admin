@@ -11,56 +11,31 @@ import Customer from "./pages/customers/Customer";
 
 const router = createBrowserRouter([
   {
-    path: "/dashboard/order",
+    path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/dashboard/order",
-        element:<Order/>
-      }
-    ],
-  },
-  {
-    path: "/dashboard/product",
-    element: <Layout />,
-    children: [
+        path: "/",
+        element: <Dashboard />,
+      },
       {
-        path: "/dashboard/product",
-        element:<Product/>
-      }
-    ],
-  },
-  {
-    path: "/dashboard/product/edit",
-    element: <Layout />,
-    children: [
+        path: "/order",
+        element: <Order />,
+      },
       {
-        path: "/dashboard/product/edit",
-        element:<EditProduct/>
-      }
-    ],
-  },
-  {
-    path: "/dashboard",
-    element: <Layout />,
-    children: [
+        path: "/product",
+        element: <Product />,
+      },
       {
-        path: "/dashboard",
-        element:<Dashboard/>
-      }
-    ],
-  },
-  {
-    path: "/dashboard/customer",
-    element: <Layout />,
-    children: [
+        path: "/product/edit",
+        element: <EditProduct />,
+      },
       {
-        path: "/dashboard/customer",
-        element:<Customer/>
-      }
+        path: "/customer",
+        element: <Customer />,
+      },
     ],
   },
-
 ]);
 
 export default router;

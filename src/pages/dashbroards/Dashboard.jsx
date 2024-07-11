@@ -18,14 +18,10 @@ import {
   Users2,
   LineChart,
   ListFilter,
-} from "lucide-react"
+} from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -34,14 +30,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -49,9 +45,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Table,
   TableBody,
@@ -59,7 +55,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 const Dashboard = () => {
   return (
@@ -153,7 +149,11 @@ const Dashboard = () => {
               size="icon"
               className="overflow-hidden rounded-full"
             >
-              <img src="https://via.placeholder.com/1920x1080" className="w-12 h-12 overflow-hidden rounded-full" alt="" />
+              <img
+                src="https://via.placeholder.com/1920x1080"
+                className="w-12 h-12 overflow-hidden rounded-full"
+                alt=""
+              />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -222,9 +222,7 @@ const Dashboard = () => {
           </Card>
         </div>
         <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
-          <Card
-            className="xl:col-span-2" x-chunk="dashboard-01-chunk-4"
-          >
+          <Card className="xl:col-span-2" x-chunk="dashboard-01-chunk-4">
             <CardHeader className="flex flex-row items-center">
               <div className="grid gap-2">
                 <CardTitle>Transactions</CardTitle>
@@ -446,8 +444,7 @@ const Dashboard = () => {
         </div>
       </main>
     </div>
-  )
+  );
 };
-
 
 export default Dashboard;
