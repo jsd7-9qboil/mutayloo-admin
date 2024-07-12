@@ -34,7 +34,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
-const EditProduct = () => {
+const AddProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({
@@ -116,17 +116,6 @@ const EditProduct = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-6">
-                    <div className="grid gap-3">
-                      <Label htmlFor="name">Product Id</Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        className="w-full"
-                        name="name"
-                        placeholder={product._id}
-                        disabled
-                      />
-                    </div>
                     <div className="grid gap-3">
                       <Label htmlFor="name">Name</Label>
                       <Input
@@ -356,4 +345,4 @@ const EditProduct = () => {
   );
 };
 
-export default EditProduct;
+export default AddProduct;

@@ -1,21 +1,32 @@
 import { createBrowserRouter } from "react-router-dom";
-// layout
+// login
+import Login from "./pages/auth/Login";
+// protected
+import ProtectedRoute from "./utils/ProtectedRoute";
+// logged in
 import Layout from "./pages/Layout";
+import Dashboard from "./pages/dashbroards/Dashboard";
 import Order from "./pages/orders/Order";
 import Product from "./pages/products/Product";
-import Dashboard from "./pages/dashbroards/Dashboard";
 import EditProduct from "./pages/products/EditProduct";
 import Customer from "./pages/customers/Customer";
-
-// pages
+import AddProduct from "./pages/products/AddProduct";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Login />,
+  },
+  {
+    path: "/",
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
       {
-        path: "/",
+        path: "/dashboard",
         element: <Dashboard />,
       },
       {
@@ -27,7 +38,11 @@ const router = createBrowserRouter([
         element: <Product />,
       },
       {
-        path: "/product/edit",
+        path: "/product/add",
+        element: <AddProduct />,
+      },
+      {
+        path: "product/:id",
         element: <EditProduct />,
       },
       {

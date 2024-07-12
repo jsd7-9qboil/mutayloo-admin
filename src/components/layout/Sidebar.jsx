@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Home, Package, ShoppingCart, Users2 } from "lucide-react";
+import { Home, Package, Package2, ShoppingCart, Users2 } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -12,11 +12,16 @@ const Sidebar = () => {
     <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
       <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
         <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8">
+              <Package2 className="h-5 w-5 drop-shadow-lg" />
+            </TooltipTrigger>
+          </Tooltip>
           {/* Dashboard */}
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                to="#"
+                to="/dashboard"
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
               >
                 <Home className="h-5 w-5" />
@@ -29,7 +34,7 @@ const Sidebar = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                to="#"
+                to="/order"
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
               >
                 <ShoppingCart className="w-5 h-5" />
@@ -42,7 +47,7 @@ const Sidebar = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                to="#"
+                to="/product"
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
               >
                 <Package className="h-5 w-5" />
@@ -55,7 +60,7 @@ const Sidebar = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                to="#"
+                to="/customer"
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
               >
                 <Users2 className="h-5 w-5" />
