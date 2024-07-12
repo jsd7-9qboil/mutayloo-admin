@@ -9,8 +9,8 @@ import Dashboard from "./pages/dashbroards/Dashboard";
 import Order from "./pages/orders/Order";
 import Product from "./pages/products/Product";
 import EditProduct from "./pages/products/EditProduct";
-import Customer from "./pages/customers/Customer";
 import AddProduct from "./pages/products/AddProduct";
+import Users from "./pages/Users/Users";
 
 const router = createBrowserRouter([
   {
@@ -46,8 +46,8 @@ const router = createBrowserRouter([
         element: <EditProduct />,
       },
       {
-        path: "/customer",
-        element: <Customer />,
+        path: "/users",
+        element: <Users />,
       },
     ],
   },

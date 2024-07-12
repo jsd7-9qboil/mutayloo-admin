@@ -19,6 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 // Helper function to capitalize the first letter of a string
 const capitalizeFirstLetter = (string) => {
@@ -29,11 +30,15 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const pathName = location.pathname.split("/").filter((path) => path !== "");
+  
+  // user data
+  const user = JSON.parse(localStorage.getItem("user"));
 
+  // logout
   const handleLogout = () => {
-    // Clear any authentication tokens or state
-    localStorage.removeItem("authToken"); // Example for removing auth token
-    // Redirect to login page
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
     navigate("/");
   };
 
@@ -84,11 +89,10 @@ const Header = () => {
             size="icon"
             className="overflow-hidden rounded-full"
           >
-            <img
-              src="https://via.placeholder.com/1920x1080"
-              className="w-12 h-12 overflow-hidden rounded-full"
-              alt=""
-            />
+            <Avatar>
+              <AvatarImage />
+              <AvatarFallback>{user.fname}</AvatarFallback>
+            </Avatar>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">

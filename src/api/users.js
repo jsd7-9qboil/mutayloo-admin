@@ -1,25 +1,31 @@
 import apiClient from "./apiClient";
 
+// login
 export const login = async (email, password) => {
   return apiClient.post("/users/login", { email, password });
 };
 
+// get users profile
 export const fetchUsers = async () => {
-  return apiClient.get("/users");
+  return apiClient.get("/profile");
 };
 
-export const fetchUserById = async (id) => {
-  return apiClient.get(`/users/${id}`);
+// get all users
+export const fetchAllUsers = async () => {
+  return apiClient.get("/users/all");
 };
 
+// create user
 export const createUser = async (userData) => {
-  return apiClient.post("/users", userData);
+  return apiClient.post("/adminRegister", userData);
 };
 
-export const updateUser = async (id, userData) => {
-  return apiClient.patch(`/users/${id}`, userData);
+// update user
+export const updateUser = async (userData) => {
+  return apiClient.patch("/profile", userData);
 };
 
+//
 export const deleteUser = async (id) => {
   return apiClient.delete(`/users/${id}`);
 };
