@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -17,8 +18,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { updateUser } from "@/api/users";
 
-const EditProfile = () => {
+const EditProfile = ({ user }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -38,19 +40,38 @@ const EditProfile = () => {
           <div className="grid grid-cols-2 items-center gap-4">
             <div className="grid w-full items-center gap-1.5">
               <Label>First Name</Label>
-              <Input type="text" id="fname" placeholder="First Name" />
+              <Input
+                type="text"
+                id="fname"
+                placeholder="First Name"
+                defaultValue={user.fname}
+              />
             </div>
             <div className="grid w-full items-center gap-1.5">
               <Label>Last Name</Label>
-              <Input type="text" id="lname" placeholder="Last Name" />
+              <Input
+                type="text"
+                id="lname"
+                placeholder="Last Name"
+                defaultValue={user.lname}
+              />
             </div>
           </div>
 
-          {/* email */}
+          {/* email and date of birth */}
           <div className="grid grid-cols-2 items-center gap-4">
             <div className="grid w-full items-center gap-1.5">
               <Label htmlFor="email">Email</Label>
-              <Input type="email" id="email" placeholder="Email" />
+              <Input
+                type="email"
+                id="email"
+                placeholder="Email"
+                defaultValue={user.email}
+              />
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label>Date of birth</Label>
+              <Input disabled type="date" />
             </div>
           </div>
 
@@ -64,7 +85,9 @@ const EditProfile = () => {
               <Label>Role</Label>
               <Select>
                 <SelectTrigger>
-                  <SelectValue placeholder="Role" />
+                  <SelectValue
+                    placeholder={user.isAdmin ? "Admin" : "Customer"}
+                  />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="admin">Admin</SelectItem>

@@ -40,7 +40,7 @@ const RenderTableRows = ({ users }) => {
       </TableCell>
       <TableCell>
         <div className="hidden lg:flex gap-4 justify-end">
-          <EditProfile />
+          <EditProfile user={user} />
 
           <Button variant="outline" size="sm">
             Delete

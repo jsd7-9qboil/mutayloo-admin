@@ -20,9 +20,9 @@ export const createUser = async (userData) => {
   return apiClient.post("/adminRegister", userData);
 };
 
-// update user
-export const updateUser = async (userData) => {
-  return apiClient.patch("/profile", userData);
+// update user by id
+export const updateUser = async ({ id, userData }) => {
+  return apiClient.patch(`/users/update/${id}`, userData);
 };
 
 //

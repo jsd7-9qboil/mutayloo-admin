@@ -9,8 +9,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");  // email: "mail@example.com"
+  const [password, setPassword] = useState(""); // password: "password@123"
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -18,8 +18,11 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await login(email, password);
+
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
+
+
       if (response.data.user.isAdmin) {
         navigate("/dashboard");
       } else {
